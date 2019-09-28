@@ -1,2 +1,5 @@
 # eros
-Simple Go HTTP Server boilerplate
+
+[Work in Progress] Simple Go HTTP Server boilerplate
+
+
