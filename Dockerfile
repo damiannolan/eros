@@ -1,7 +1,7 @@
 # Build Env
 FROM golang:1.13 AS build-env
 
-# ENV GO111MODULE=on
+ENV GO111MODULE=on
 
 ADD . /go/src/github.com/damiannolan/eros
 
