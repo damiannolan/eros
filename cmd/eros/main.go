@@ -1,17 +1,16 @@
 package main
 
 import (
-	"fmt"
-
+	"github.com/damiannolan/eros/health"
+	log "github.com/damiannolan/eros/logger"
 	"github.com/damiannolan/eros/server"
 )
 
 func main() {
-	fmt.Println("Eros")
+	srv := server.New(server.NewConfig())
+	srv.RegisterResource(health.NewResource("/health"))
 
-	srv := &server.Server{
-		Name: "Http Server Struct",
+	if err := srv.Run(); err != nil {
+		log.WithError(err).Fatal("Serving failed")
 	}
-
-	fmt.Println(srv)
 }
